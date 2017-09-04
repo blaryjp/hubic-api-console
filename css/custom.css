@@ -1,0 +1,44 @@
+.jumbotron {
+    padding-bottom: 48px;
+    padding-top: 48px;
+}
+
+.container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    font-size: 43px;
+}
+
+.jumbotron p {
+    font-size: 18px;
+}
+
+.btn-two {
+    display: block;
+    width: 100%;
+}
+
+.about-ovh {
+    border-style: none;
+    margin-bottom: 1.5em;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.about-hubic {
+    margin-bottom: 1.5em;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.image-ovh, .image-hubic {
+    display: none;
+}
+
+.ovh-footer, .hubic-footer>a {
+    display: block;
+    width: 100%;
+}

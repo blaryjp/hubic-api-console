@@ -1,0 +1,25 @@
+<div class="about-ovh">
+    <article class="markdown-body entry-content" itemprop="text">
+        <h1>OVH-API-Console <a href="https://github.com/blaryjp/ovh-api-console" target="_blank">(ovh-api-console)</a> </h1>
+        <p>A simple version of the OVH Api Console.</p>
+        <p>Note: The environnement is based on the <a href="https://github.com/ngbp/ngbp" target="_blank">ngBoilerplate</a> engine.</p>
+        <h2>Installation</h2>
+        <p>Before cloning the project, make sure to have: git, node.js, grunt-cli, and bower. For this 2 last elements, once you have node.js installed, simply run:
+            <code>npm install -g bower</code> and <code>npm install -g grunt-cli</code></p>
+        <p>You can now install dependancies:</p>
+<div class="highlight highlight-source-shell"><pre>npm install
+bower install</pre></div>
+        <p>And finally add your API AK, AS, and Base Path into <code>src/app/app.js</code>:</p>
+        <pre>
+<code>OvhProvider.setAppKey('INSERT_AK_HERE');
+OvhProvider.setAppSecret('INSERT_AS_HERE');
+OvhProvider.setBaseUrl('INSERT_URL_HERE');</code></pre>
+        <h2>Development</h2>
+        <p>Simply launch: <code>grunt watch</code>.</p>
+        <p>Builded development files are generated into the <code>build</code> folder. You can expose this folder with Apache or Nginx, but you can also simply launch <code>grunt serve</code>!</p>
+        <h2>Compile / Release</h2>
+        <p>Just execute: <code>grunt</code>. It will create a <code>dist</code> folder with all production files. Then, copy all the files in this folder to your production server!</p>
+        <h1>Contributing</h1>
+        <p>Please send me pull requests!</p>
+    </article>
+</div>

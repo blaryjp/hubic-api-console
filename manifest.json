@@ -1,0 +1,30 @@
+{
+    "name": "Hubic Console App",
+    "short_name": "HubiConsole",
+    "icons": [{
+            "src": "images/ic_launcher_hubic/res/mipmap-mdpi/ic_launcher.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "images/ic_launcher_hubic/res/mipmap-xhdpi/ic_launcher.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "images/ic_launcher_hubic/res/mipmap-xxxhdpi/ic_launcher.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "images/ic_launcher_hubic/web_hi_res_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/#!/home",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#317EFB",
+    "background_color": "#000"
+}

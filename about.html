@@ -1,0 +1,28 @@
+<div class="jumbotron text-center">
+    <h1>The About Page</h1>
+    <p><span class="text-danger">OVH API Console</span> and <span class="text-danger">Hubic API Console</span>.</p>
+</div>
+
+<div class="row about">
+
+    <div>
+        <accordion>
+            <!-- COLUMN ONE NAMED VIEW -->
+            <accordion-group is-open="status.open">
+                <accordion-heading>
+                    OVH API Console
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </accordion-heading>
+                <div ui-view="columnOne"></div>
+            </accordion-group>
+            <!-- COLUMN TWO NAMED VIEW -->
+            <accordion-group>
+                <accordion-heading>
+                    Hubic API Console
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </accordion-heading>
+                <div ui-view="columnTwo"></div>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

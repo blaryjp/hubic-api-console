@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="#317EFB" />
+
+    <title>hubiC API Console</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="https://fonts.googleapis.com/css?family=Raleway:500" />
+    <!-- include: "type": "css", "basePath": "dist/css", "baseUrl": "css/", "files": "jquery.jsonview.min.css" -->
+    <!-- include: "type": "css", "basePath": "dist/css", "baseUrl": "css/", "files": "font-awesome.min.css" -->
+    <!-- include: "type": "css", "basePath": "dist/css", "baseUrl": "css/", "files": "bootstrap.min.css" -->
+    <!-- include: "type": "css", "basePath": "dist/css", "baseUrl": "css/", "files": "api-console.min.css" -->
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="css/custom.min.css" />
+</head>
+
+<!-- apply our angular app to our site -->
+
+<body ng-app="routerApp">
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid" data-ng-controller="CollapseDemoCtrl">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-ng-click="isNavCollapsed = !isNavCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-href="#">Hubic Console App</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse" collapse="isNavCollapsed" data-ng-controller="SessionCtrl">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="hubic">Hubic</a></li>
+                    <li><a ui-sref="about">About</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" data-ng-if="isLogged" data-ng-submit="logout()">
+                    <div class="inline middle right-space-m15" data-ng-if="me" style="color: white">
+                        <div class="text-right fs12 open-sans">{{me.nichandle}}</div>
+                        <div class="text-right fs12 open-sans-light">{{me.email}}</div>
+                    </div>
+                    <button type="submit" class="btn btn-default middle" title="Log out" data-ng-disabled="loading">
+                            <span class="glyphicon glyphicon-log-out" data-ng-if="!loading"></span>
+                            <span class="loading" data-ng-if="loading"></span>
+                        </button>
+                </form>
+                <form class="nav navbar-nav navbar-form navbar-right" data-ng-if="!isLogged" data-ng-submit="login()">
+                    <button type="submit" class="btn btn-default" data-ng-disabled="loading">
+                          <span data-ng-if="!loading">Log in</span>
+                          <span class="loading" data-ng-if="loading"></span>
+                        </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view=""></div>
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- include: "type": "js", "basePath": "dist/js", "baseUrl": "js/" ,"files": "jquery-3.2.1.min.js" -->
+    <!-- include: "type": "js", "basePath": "dist/js", "baseUrl": "js/" ,"files": "angular.min.js" -->
+    <!-- include: "type": "js", "basePath": "dist/js", "baseUrl": "js/" ,"files": "built.js" -->
+
+    <!-- include: "type": "js", "basePath": "dist", "files": "ng-hubic.js" -->
+    <!-- include: "type": "js", "basePath": "dist", "files": "app.js" -->
+    <!-- include: "type": "js", "basePath": "dist/js", "baseUrl": "js/" ,"files": "jsonview.min.js" -->
+    <!-- include: "type": "js", "basePath": "dist/js", "baseUrl": "js/" ,"files": "prettypath.min.js" -->
+    <!-- include: "type": "js", "basePath": "dist/api", "baseUrl": "api/" ,"files": "*.js" -->
+    <!-- include: "type": "js", "basePath": "dist/session", "baseUrl": "session/" ,"files": "*.js" -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function() {
+                    console.log("Service Worker Registered");
+                }).catch(function(err) {
+                    console.log("No it didn't. This happened: ", err)
+                });
+        }
+    </script>
+</body>
+
+</html>

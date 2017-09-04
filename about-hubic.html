@@ -1,0 +1,35 @@
+<div class="about-hubic">
+    <article class="markdown-body entry-content" itemprop="text">
+        <h1>HUBIC-API-Console</h1>
+        <p>Hubic API Console is mostly based on ovh-api-console project.</p>
+        <ul>
+            <li>ovh-api-console project is here: <a href="https://github.com/blaryjp/ovh-api-console">on GitHub.</a></li>
+            <li>ng-ovh project is here <a href="https://github.com/blaryjp/ng-ovh">on GitHub.</a></li>
+        </ul>
+        <h2>Installation</h2>
+        <p>Before cloning the project, make sure to have: git, node.js, grunt-cli, and bower. For this 2 last elements, once you have node.js installed, simply run:
+            <code>npm install -g grunt-cli</code></p>
+        <p>You can now install dependancies:</p>
+        <div class="highlight highlight-source-shell"><pre>npm install</pre></div>
+        <p>And finally add your API AK, AS, and Base Path into <code>app.js</code> file:</p>
+        <pre>
+<code>OvhProvider.setAppKey('INSERT_AK_HERE');
+OvhProvider.setAppSecret('INSERT_AS_HERE');
+OvhProvider.setBaseUrl('INSERT_URL_HERE');</code></pre>
+        <p>Set the Redirection URI in <code>ng-hubic.js</code>file:</p>
+        <pre>
+<code>var redirect_uri = window.encodeURIComponent('');</code></pre>
+        <h2>Development</h2>
+        <h3>For cleaning the dist folder, before building your project:</h3>
+        <code>grunt clear</code>
+        <h3>For watching and running the server, simply launch from the root folder:</h3>
+        <code>grunt serve</code>
+        <h3>For building the project, simply run:</h3>
+        <code>grunt</code>
+        <p>Builded development files are generated into the <code>dist</code> folder. You can expose this folder with Apache or Nginx, but you can also simply launch <code>grunt serve</code>!</p>
+        <h2>Compile / Release</h2>
+        <p>Just execute: <code>grunt</code>. It will create a <code>dist</code> folder with all production files. Then, copy all the files in this folder to your production server!</p>
+        <h1>Contributing</h1>
+        <p>Please send me pull requests!</p>
+    </article>
+</div>
